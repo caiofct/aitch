@@ -4,7 +4,11 @@ require "json"
 require "zlib"
 
 require "nokogiri"
-require "active_support/core_ext/object/to_query"
+begin
+  require "active_support/core_ext/object/to_query"
+rescue LoadError
+  # do nothing
+end
 
 require "aitch/utils"
 require "aitch/uri"
